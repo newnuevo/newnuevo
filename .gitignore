@@ -9,7 +9,6 @@ bower_components
 build/*
 composer.phar
 credentials.json
-dist
 mix-manifest.json
 node_modules
 npm-debug.log
