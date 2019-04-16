@@ -3,27 +3,27 @@
   "all": [
     "../server/index.spa.html",
     "../server/index.ssr.html",
-    "46e9021cb349e0a6cb28.js",
+    "151671983ece04d73cd4.js",
     "5e473c24ba57cebaf034.js",
+    "8cfcaddd759353242385.js",
     "LICENSES",
-    "a0bba3e66b9c7cd40953.js",
-    "af78c830a926461779eb.js",
-    "icons/icon_120.9mld2VBMsQ$.png",
-    "icons/icon_144.9mld2VBMsQ$.png",
-    "icons/icon_152.9mld2VBMsQ$.png",
-    "icons/icon_192.9mld2VBMsQ$.png",
-    "icons/icon_384.9mld2VBMsQ$.png",
-    "icons/icon_512.9mld2VBMsQ$.png",
-    "icons/icon_64.9mld2VBMsQ$.png",
-    "manifest.28df9a36.json"
+    "c54cbcc119de8bc9dc79.js",
+    "icons/icon_120.ceh2Byuxq35.png",
+    "icons/icon_144.ceh2Byuxq35.png",
+    "icons/icon_152.ceh2Byuxq35.png",
+    "icons/icon_192.ceh2Byuxq35.png",
+    "icons/icon_384.ceh2Byuxq35.png",
+    "icons/icon_512.ceh2Byuxq35.png",
+    "icons/icon_64.ceh2Byuxq35.png",
+    "manifest.43c8d6f8.json"
   ],
   "initial": [
-    "af78c830a926461779eb.js",
+    "8cfcaddd759353242385.js",
     "5e473c24ba57cebaf034.js",
-    "46e9021cb349e0a6cb28.js"
+    "c54cbcc119de8bc9dc79.js"
   ],
   "async": [
-    "a0bba3e66b9c7cd40953.js"
+    "151671983ece04d73cd4.js"
   ],
   "modules": {
     "15968522": [
@@ -39,13 +39,13 @@
       3
     ],
     "29004697": [
-      2
+      6
     ],
     "35094673": [
-      2
+      6
     ],
     "64483025": [
-      2
+      6
     ],
     "77347969": [
       3
@@ -54,7 +54,7 @@
       3
     ],
     "59e55e34": [
-      2
+      6
     ],
     "662a447d": [
       3
@@ -177,22 +177,22 @@
       3
     ],
     "72fd9729": [
-      2
+      6
     ],
     "1af26035": [
-      2
+      6
     ],
     "c44e5ab2": [
-      2
+      6
     ],
     "9bbe4e12": [
-      2
+      6
     ],
     "1b496a45": [
-      2
+      6
     ],
     "284a6a52": [
-      2
+      6
     ],
     "63efb3ea": [
       3
@@ -234,13 +234,13 @@
       3
     ],
     "54f48957": [
-      2
+      6
     ],
     "db124b1c": [
       3
     ],
     "dce7d330": [
-      2
+      6
     ],
     "db8b3fa8": [
       3
@@ -330,13 +330,13 @@
       3
     ],
     "3f7d94e8": [
-      2
+      6
     ],
     "faf09350": [
       3
     ],
     "0baf12e8": [
-      2
+      6
     ],
     "5f91fb50": [
       3
@@ -345,10 +345,10 @@
       3
     ],
     "9785636c": [
-      2
+      6
     ],
     "2ad3c17e": [
-      2
+      6
     ],
     "4078cda4": [
       3
@@ -471,16 +471,16 @@
       3
     ],
     "1b32b9ce": [
-      2
+      6
     ],
     "63d35e0a": [
-      2
+      6
     ],
     "12c3ed87": [
-      2
+      6
     ],
     "3127910e": [
-      2
+      6
     ],
     "1e19c204": [
       3
@@ -537,31 +537,31 @@
       3
     ],
     "340d2044": [
-      5
+      2
     ],
     "4835f2fc": [
-      5
+      2
     ],
     "7120e3ce": [
-      5
+      2
     ],
     "2f8cd4b0": [
-      5
+      2
     ],
     "19e30edc": [
-      5
+      2
     ],
     "77ccca28": [
-      5
+      2
     ],
     "521e072a": [
-      5
+      2
     ]
   },
   "assetsMapping": {
-    "46e9021cb349e0a6cb28.js": "1a3ae26b",
+    "151671983ece04d73cd4.js": "2a130dde",
     "5e473c24ba57cebaf034.js": "0859c165",
-    "a0bba3e66b9c7cd40953.js": "2a130dde",
-    "af78c830a926461779eb.js": "6fca0322"
+    "8cfcaddd759353242385.js": "6fca0322",
+    "c54cbcc119de8bc9dc79.js": "1a3ae26b"
   }
 }

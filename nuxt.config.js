@@ -7,16 +7,24 @@ export default {
    ** Headers of the page
    */
     head: {
-        title: "New Nuevo - Creative Studio",
+        title: 'New Nuevo - Creative Studio',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'description', content: pkg.description },
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-            { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css' },
-            { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Questrial' },
+            { rel: 'icon', type: 'image/png', href: '/icon.png' },
+            {
+                rel: 'stylesheet',
+                type: 'text/css',
+                href:
+          'https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css',
+            },
+            {
+                rel: 'stylesheet',
+                href: 'https://fonts.googleapis.com/css?family=Questrial',
+            },
         ],
     },
 
