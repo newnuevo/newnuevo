@@ -20,3 +20,4 @@ sw.js
 precache-manifest*
 vendor/*
 yarn-error.log
+dist
