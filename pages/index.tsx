@@ -5,12 +5,17 @@ import styles from '../styles/Home.module.css'
 
 import * as contentful from 'contentful'
 
-var client = contentful.createClient({
-  space: process.env.CONTENT_SPACE_ID,
-  accessToken: process.env.CONTENT_ACCESS_TOKEN,
+type ContentfulData = {
+  header?: string,
+  email?: string
+};
+
+let client = contentful.createClient({
+  space: process.env.CONTENT_SPACE_ID as string,
+  accessToken: process.env.CONTENT_ACCESS_TOKEN as string,
 });
 
-const Home: NextPage = (props) => {
+const Home: NextPage = (props:ContentfulData) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -52,7 +57,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      ...data.fields,
+      ...data.fields as object,
     },
   }
 }
