@@ -31,8 +31,8 @@ main {
 }
 
 .header-email:hover {
-  cursor: pointer;
   color: #ff5b55;
+  cursor: pointer;
 }
 
 .icon__wrapper {
