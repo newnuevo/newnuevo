@@ -193,6 +193,14 @@ const AnimatedMark = ({ instance }: { instance: 'hero' | 'nav' }) => (
   </svg>
 )
 
+const UpRightArrow = () => (
+  <span className={styles.textArrow} aria-hidden="true">{`\u2197\uFE0E`}</span>
+)
+
+const UpArrow = () => (
+  <span className={styles.textArrow} aria-hidden="true">{`\u2191\uFE0E`}</span>
+)
+
 const Home: NextPage<ContentfulData> = ({ email }) => {
   const contactEmail = email || 'hello@newnuevo.com'
   const [isScrolled, setIsScrolled] = useState(false)
@@ -349,7 +357,7 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
               >
                 <div className={styles.serviceTopline}>
                   <span>{service.number}</span>
-                  <span aria-hidden="true">↗</span>
+                  <UpRightArrow />
                 </div>
                 <h3>{service.title}</h3>
                 <p className={styles.serviceDescription}>{service.description}</p>
@@ -436,7 +444,7 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Open in Google Maps <span aria-hidden="true">↗</span>
+              Open in Google Maps <UpRightArrow />
             </a>
           </div>
         </section>
@@ -450,7 +458,7 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
             href={`mailto:${contactEmail}`}
             data-reveal
           >
-            {contactEmail} <span aria-hidden="true">↗</span>
+            {contactEmail} <UpRightArrow />
           </a>
         </section>
       </main>
@@ -466,16 +474,16 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
             />
           </a>
           <div className={styles.socialLinks}>
-            <a href="https://instagram.com/thenewnuevo" target="_blank" rel="noreferrer">Instagram ↗</a>
-            <a href="https://twitter.com/thenewnuevo" target="_blank" rel="noreferrer">X / Twitter ↗</a>
-            <a href={`mailto:${contactEmail}`}>Email us ↗</a>
+            <a href="https://instagram.com/thenewnuevo" target="_blank" rel="noreferrer">Instagram <UpRightArrow /></a>
+            <a href="https://twitter.com/thenewnuevo" target="_blank" rel="noreferrer">X / Twitter <UpRightArrow /></a>
+            <a href={`mailto:${contactEmail}`}>Email us <UpRightArrow /></a>
           </div>
         </div>
         <div className={styles.footerLegal}>
           <span>© {new Date().getFullYear()} New Nuevo Ltd</span>
           <span>Company no. 11927264</span>
           <span>Registered office: 20–22 Wenlock Road, London, N1 7GU</span>
-          <a href="#top">Back to top ↑</a>
+          <a href="#top">Back to top <UpArrow /></a>
         </div>
       </footer>
     </div>

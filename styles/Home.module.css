@@ -201,6 +201,16 @@
   transition: color 200ms ease;
 }
 
+.textArrow {
+  display: inline-block;
+  flex: 0 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-variant-emoji: text;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
 .mapLink:hover,
 .portfolioLink:hover,
 .contactEmail:hover {
@@ -724,6 +734,13 @@
   align-items: flex-start;
   gap: 18px;
   font-size: 14px;
+}
+
+.socialLinks a,
+.footerLegal a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .socialLinks a:hover,
