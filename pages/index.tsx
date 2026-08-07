@@ -102,34 +102,6 @@ const studies = [
   },
 ]
 
-const faqs = [
-  {
-    question: 'What does New Nuevo do?',
-    answer:
-      'New Nuevo is a London digital product studio. We help organisations move from early strategy and brand identity through UX, UI, web development and mobile product delivery.',
-  },
-  {
-    question: 'Can you handle design and development together?',
-    answer:
-      'Yes. Strategy, design, branding, UX, UI and software development can be delivered as one joined-up engagement or as focused support for an existing team.',
-  },
-  {
-    question: 'What platforms do you design and build for?',
-    answer:
-      'We design and build responsive websites, web applications, iOS and Android products, including cross-platform mobile experiences.',
-  },
-  {
-    question: 'Do you also create branding and print materials?',
-    answer:
-      'Yes. We create brand identities and visual systems for digital and physical touchpoints, including stationery, printed materials and campaign assets.',
-  },
-  {
-    question: 'Where is New Nuevo based?',
-    answer:
-      'New Nuevo is based at Creative Works, First Floor, 7 Blackhorse Lane, London, E17 6DS.',
-  },
-]
-
 const client = contentful.createClient({
   space: process.env.CONTENT_SPACE_ID as string,
   accessToken: process.env.CONTENT_ACCESS_TOKEN as string,
@@ -374,18 +346,6 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
           '@id': `${SITE_URL}#organization`,
         },
       })),
-      {
-        '@type': 'FAQPage',
-        '@id': `${SITE_URL}#faq`,
-        mainEntity: faqs.map((faq) => ({
-          '@type': 'Question',
-          name: faq.question,
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: faq.answer,
-          },
-        })),
-      },
     ],
   }
 
@@ -412,6 +372,7 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
         <link rel="alternate" hrefLang="en-GB" href={SITE_URL} />
         <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
         <link rel="sitemap" type="application/xml" href={`${SITE_URL}sitemap.xml`} />
+        <link rel="alternate" type="text/plain" href={`${SITE_URL}llms.txt`} title="New Nuevo information for AI agents" />
         <link rel="manifest" href="/favicons/manifest.json" />
         <link rel="icon" href="/favicons/favicon.ico" />
         <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />
@@ -601,26 +562,6 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
               Open in Google Maps <UpRightArrow />
             </a>
           </div>
-        </section>
-
-        <section className={`${styles.section} ${styles.faqSection}`} id="faq" aria-labelledby="faq-title">
-          <details className={styles.faqDisclosure}>
-            <summary className={styles.faqSummary}>
-              <span id="faq-title" role="heading" aria-level={2}>Frequently asked questions</span>
-              <span className={styles.faqToggle} aria-hidden="true">+</span>
-            </summary>
-            <div className={styles.faqList}>
-              {faqs.map((faq) => (
-                <details className={styles.faqItem} key={faq.question}>
-                  <summary>
-                    {faq.question}
-                    <span className={styles.faqToggle} aria-hidden="true">+</span>
-                  </summary>
-                  <p>{faq.answer}</p>
-                </details>
-              ))}
-            </div>
-          </details>
         </section>
 
         <section className={styles.contactSection} id="contact" aria-labelledby="contact-title">
