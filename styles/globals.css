@@ -1,8 +1,28 @@
+:root {
+  --paper: #ffffff;
+  --paper-light: #ffffff;
+  --ink: #121212;
+  --muted: #625f57;
+  --coral: #ff5b55;
+  --yellow: #ffbe15;
+  --line: rgba(18, 18, 18, 0.2);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Questrial', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Questrial', Arial, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 a {
@@ -10,80 +30,38 @@ a {
   text-decoration: none;
 }
 
+button,
+input,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
 * {
   box-sizing: border-box;
 }
 
-main {
-  margin: 50px auto 0;
-  max-width: 1300px;
+::selection {
+  color: var(--ink);
+  background: var(--yellow);
 }
 
-.header-text {
-  font-size: 2rem;
-  margin-bottom: 10px;
+:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 4px;
 }
 
-.header-email {
-  font-size: 1.6rem;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out;
-}
-
-.header-email:hover {
-  color: #ff5b55;
-  cursor: pointer;
-}
-
-.icon__wrapper {
-  margin-bottom: 10px;
-}
-
-.icon__social {
-  padding-right: 20px;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out;
-}
-
-.icon__social:hover {
-  fill: #ff5b55;
-}
-
-.icon__map {
-  -webkit-transform: translateY(-2px);
-  transform: translate(6px, 5px);
-  transition-duration: .3s;
-  transition-timing-function: cubic-bezier(.32, -.79, .6, 1.57);
-  width: 15px;
-}
-
-.address {
-  color: #666;
-  transition-duration: .3s;
-  transition-timing-function: ease-in-out;
-}
-
-.address:hover {
-  color: #000;
-}
-
-.address:hover .icon__map {
-  fill: #ff5b55;
-  -webkit-transform: translate(10px, -4px) rotate(15deg);
-  transform: translate(10px, -4px) rotate(15deg) scale(1.5);
-}
-
-.main__content {
-  margin: 40px 0;
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-reduced-motion: reduce) {
   html {
-    color-scheme: dark;
+    scroll-behavior: auto;
   }
 
-  body {
-    color: white;
-    background: black;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
