@@ -9,6 +9,9 @@ type ContentfulData = {
   email?: string
 }
 
+const SITE_URL = 'https://newnuevo.com/'
+const MAP_URL = 'https://www.google.com/maps/place/New+Nuevo+Ltd/data=!4m2!3m1!1s0x0:0x6947fc62c20a627b?sa=X&ved=1t:2428&ictx=111'
+
 const services = [
   {
     number: "",
@@ -96,6 +99,34 @@ const studies = [
       label: 'Studio 5 2025 showreel',
     },
     images: [],
+  },
+]
+
+const faqs = [
+  {
+    question: 'What does New Nuevo do?',
+    answer:
+      'New Nuevo is a London digital product studio. We help organisations move from early strategy and brand identity through UX, UI, web development and mobile product delivery.',
+  },
+  {
+    question: 'Can you handle design and development together?',
+    answer:
+      'Yes. Strategy, design, branding, UX, UI and software development can be delivered as one joined-up engagement or as focused support for an existing team.',
+  },
+  {
+    question: 'What platforms do you design and build for?',
+    answer:
+      'We design and build responsive websites, web applications, iOS and Android products, including cross-platform mobile experiences.',
+  },
+  {
+    question: 'Do you also create branding and print materials?',
+    answer:
+      'Yes. We create brand identities and visual systems for digital and physical touchpoints, including stationery, printed materials and campaign assets.',
+  },
+  {
+    question: 'Where is New Nuevo based?',
+    answer:
+      'New Nuevo is based at Creative Works, First Floor, 7 Blackhorse Lane, London, E17 6DS.',
   },
 ]
 
@@ -240,21 +271,122 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
     return () => observer.disconnect()
   }, [])
 
-  const organisationData = {
+  const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Organisation',
-    name: 'New Nuevo Ltd',
-    url: 'https://newnuevo.com/',
-    email: contactEmail,
-    description:
-      'A London digital product studio specialising in product strategy, UX and UI design, web platforms, and mobile development.',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'First Floor, 7 Blackhorse Lane',
-      addressLocality: 'London',
-      postalCode: 'E17 6DS',
-      addressCountry: 'GB',
-    },
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': `${SITE_URL}#organization`,
+        name: 'New Nuevo',
+        legalName: 'New Nuevo Ltd',
+        url: SITE_URL,
+        logo: `${SITE_URL}new-nuevo-logo-black.svg`,
+        image: `${SITE_URL}og.png`,
+        email: contactEmail,
+        slogan: 'We design and build digital products with care.',
+        description:
+          'A London digital product studio specialising in strategy, branding, UX and UI design, web development, and mobile product delivery.',
+        identifier: {
+          '@type': 'PropertyValue',
+          propertyID: 'Companies House',
+          value: '11927264',
+        },
+        address: {
+          '@type': 'PostalAddress',
+          name: 'Creative Works',
+          streetAddress: 'First Floor, 7 Blackhorse Lane',
+          addressLocality: 'London',
+          postalCode: 'E17 6DS',
+          addressCountry: 'GB',
+        },
+        legalAddress: {
+          '@type': 'PostalAddress',
+          streetAddress: '20-22 Wenlock Road',
+          addressLocality: 'London',
+          postalCode: 'N1 7GU',
+          addressCountry: 'GB',
+        },
+        hasMap: MAP_URL,
+        areaServed: 'United Kingdom',
+        knowsLanguage: 'en-GB',
+        knowsAbout: services.map((service) => service.title),
+        sameAs: [
+          'https://instagram.com/thenewnuevo',
+          'https://twitter.com/thenewnuevo',
+        ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: contactEmail,
+          contactType: 'new business enquiries',
+          availableLanguage: 'English',
+        },
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'Digital product studio services',
+          itemListElement: services.map((service, index) => ({
+            '@type': 'Offer',
+            itemOffered: {
+              '@id': `${SITE_URL}#service-${index + 1}`,
+            },
+          })),
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}#website`,
+        url: SITE_URL,
+        name: 'New Nuevo',
+        description: 'New Nuevo is a London digital product studio.',
+        inLanguage: 'en-GB',
+        publisher: {
+          '@id': `${SITE_URL}#organization`,
+        },
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${SITE_URL}#webpage`,
+        url: SITE_URL,
+        name: 'New Nuevo | Digital Product Studio, London',
+        description:
+          'New Nuevo is a London digital product studio for strategy, branding, UX and UI, web development, and mobile products.',
+        inLanguage: 'en-GB',
+        isPartOf: {
+          '@id': `${SITE_URL}#website`,
+        },
+        about: {
+          '@id': `${SITE_URL}#organization`,
+        },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: `${SITE_URL}og.png`,
+          width: 1200,
+          height: 630,
+        },
+      },
+      ...services.map((service, index) => ({
+        '@type': 'Service',
+        '@id': `${SITE_URL}#service-${index + 1}`,
+        name: service.title,
+        description: service.description,
+        serviceType: service.detail.split(' / '),
+        areaServed: 'United Kingdom',
+        provider: {
+          '@id': `${SITE_URL}#organization`,
+        },
+      })),
+      {
+        '@type': 'FAQPage',
+        '@id': `${SITE_URL}#faq`,
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      },
+    ],
   }
 
   return (
@@ -263,9 +395,24 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
         <title>New Nuevo | Digital Product Studio, London</title>
         <meta
           name="description"
-          content="New Nuevo is a London digital product studio designing and building useful, characterful web and mobile experiences."
+          content="New Nuevo is a London digital product studio for strategy, branding, UX and UI, web development, and mobile products."
         />
-        <link rel="canonical" href="https://newnuevo.com/" />
+        <meta name="author" content="New Nuevo Ltd" />
+        <meta name="application-name" content="New Nuevo" />
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta
+          name="googlebot"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="canonical" href={SITE_URL} />
+        <link rel="alternate" hrefLang="en-GB" href={SITE_URL} />
+        <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
+        <link rel="sitemap" type="application/xml" href={`${SITE_URL}sitemap.xml`} />
+        <link rel="manifest" href="/favicons/manifest.json" />
         <link rel="icon" href="/favicons/favicon.ico" />
         <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png" />
@@ -281,27 +428,34 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
         <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
         <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png" />
-        <meta property="og:url" content="https://newnuevo.com/" />
+        <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_GB" />
+        <meta property="og:site_name" content="New Nuevo" />
         <meta property="og:title" content="New Nuevo | Digital Product Studio" />
         <meta
           property="og:description"
-          content="We design and build digital products with care."
+          content="Strategy, branding, UX and UI, web development, and mobile products from a London digital studio."
         />
-        <meta property="og:image" content="https://newnuevo.com/og.png" />
+        <meta property="og:image" content={`${SITE_URL}og.png`} />
+        <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="New Nuevo. We design and build digital products with character." />
+        <meta property="og:image:alt" content="New Nuevo digital product studio social preview." />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@thenewnuevo" />
         <meta name="twitter:title" content="New Nuevo | Digital Product Studio" />
         <meta
           name="twitter:description"
-          content="We design and build digital products with care."
+          content="Strategy, branding, UX and UI, web development, and mobile products from a London digital studio."
         />
-        <meta name="twitter:image" content="https://newnuevo.com/og.png" />
+        <meta name="twitter:image" content={`${SITE_URL}og.png`} />
+        <meta name="twitter:image:alt" content="New Nuevo digital product studio social preview." />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+          }}
         />
       </Head>
 
@@ -440,13 +594,33 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
             </address>
             <a
               className={styles.mapLink}
-              href="https://www.google.co.uk/maps/place/Creative+Works/@51.5886675,-0.0420934,17z/data=!3m1!4b1!4m5!3m4!1s0x48761dd1e1d2ff2d:0x3298c94ad8dc5a6c!8m2!3d51.5886642!4d-0.0399047"
+              href={MAP_URL}
               target="_blank"
               rel="noreferrer"
             >
               Open in Google Maps <UpRightArrow />
             </a>
           </div>
+        </section>
+
+        <section className={`${styles.section} ${styles.faqSection}`} id="faq" aria-labelledby="faq-title">
+          <details className={styles.faqDisclosure}>
+            <summary className={styles.faqSummary}>
+              <span id="faq-title" role="heading" aria-level={2}>Frequently asked questions</span>
+              <span className={styles.faqToggle} aria-hidden="true">+</span>
+            </summary>
+            <div className={styles.faqList}>
+              {faqs.map((faq) => (
+                <details className={styles.faqItem} key={faq.question}>
+                  <summary>
+                    {faq.question}
+                    <span className={styles.faqToggle} aria-hidden="true">+</span>
+                  </summary>
+                  <p>{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </details>
         </section>
 
         <section className={styles.contactSection} id="contact" aria-labelledby="contact-title">
