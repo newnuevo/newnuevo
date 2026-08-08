@@ -371,29 +371,100 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
         <link rel="canonical" href={SITE_URL} />
         <link rel="alternate" hrefLang="en-GB" href={SITE_URL} />
         <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
-        <link rel="sitemap" type="application/xml" href={`${SITE_URL}sitemap.xml`} />
-        <link rel="alternate" type="text/plain" href={`${SITE_URL}llms.txt`} title="New Nuevo information for AI agents" />
+        <link
+          rel="sitemap"
+          type="application/xml"
+          href={`${SITE_URL}sitemap.xml`}
+        />
+        <link
+          rel="alternate"
+          type="text/plain"
+          href={`${SITE_URL}llms.txt`}
+          title="New Nuevo information for AI agents"
+        />
         <link rel="manifest" href="/favicons/manifest.json" />
         <link rel="icon" href="/favicons/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-icon-180x180.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-icon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-        <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="57x57"
+          href="/favicons/apple-icon-57x57.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="60x60"
+          href="/favicons/apple-icon-60x60.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="72x72"
+          href="/favicons/apple-icon-72x72.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="76x76"
+          href="/favicons/apple-icon-76x76.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="114x114"
+          href="/favicons/apple-icon-114x114.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="120x120"
+          href="/favicons/apple-icon-120x120.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="144x144"
+          href="/favicons/apple-icon-144x144.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/favicons/apple-icon-152x152.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicons/apple-icon-180x180.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicons/android-icon-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicons/favicon-96x96.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicons/favicon-16x16.png"
+        />
+        <meta
+          name="msapplication-TileImage"
+          content="/favicons/ms-icon-144x144.png"
+        />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_GB" />
         <meta property="og:site_name" content="New Nuevo" />
-        <meta property="og:title" content="New Nuevo | Digital Product Studio" />
+        <meta
+          property="og:title"
+          content="New Nuevo | Digital Product Studio"
+        />
         <meta
           property="og:description"
           content="Strategy, branding, UX and UI, web development, and mobile products from a London digital studio."
@@ -402,26 +473,41 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="New Nuevo digital product studio social preview." />
+        <meta
+          property="og:image:alt"
+          content="New Nuevo digital product studio social preview."
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@thenewnuevo" />
-        <meta name="twitter:title" content="New Nuevo | Digital Product Studio" />
+        <meta
+          name="twitter:title"
+          content="New Nuevo | Digital Product Studio"
+        />
         <meta
           name="twitter:description"
           content="Strategy, branding, UX and UI, web development, and mobile products from a London digital studio."
         />
         <meta name="twitter:image" content={`${SITE_URL}og.png`} />
-        <meta name="twitter:image:alt" content="New Nuevo digital product studio social preview." />
+        <meta
+          name="twitter:image:alt"
+          content="New Nuevo digital product studio social preview."
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
       </Head>
 
-      <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ''}`}>
-        <a className={styles.brand} href="#top" aria-label="New Nuevo, back to top">
+      <header
+        className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}
+      >
+        <a
+          className={styles.brand}
+          href="#top"
+          aria-label="New Nuevo, back to top"
+        >
           <span className={styles.brandFull}>
             <Image
               src="/new-nuevo-logo-black.svg"
@@ -447,7 +533,8 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
         <section className={styles.hero} aria-labelledby="hero-title">
           <div className={styles.heroCopy}>
             <h1 id="hero-title">
-              We design and build digital products <span className={styles.heroCare}>with care.</span>
+              We design &amp; build digital products{" "}
+              <span className={styles.heroCare}>with care.</span>
             </h1>
           </div>
 
@@ -458,9 +545,18 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
           </div>
         </section>
 
-        <section className={styles.section} id="services" aria-labelledby="services-title">
-          <div className={`${styles.sectionHeading} ${styles.reveal}`} data-reveal>
-            <h2 id="services-title">From initial ideas to finished products.</h2>
+        <section
+          className={styles.section}
+          id="services"
+          aria-labelledby="services-title"
+        >
+          <div
+            className={`${styles.sectionHeading} ${styles.reveal}`}
+            data-reveal
+          >
+            <h2 id="services-title">
+              From initial ideas to finished products.
+            </h2>
           </div>
 
           <div className={styles.serviceGrid}>
@@ -475,14 +571,20 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
                   <UpRightArrow />
                 </div>
                 <h3>{service.title}</h3>
-                <p className={styles.serviceDescription}>{service.description}</p>
+                <p className={styles.serviceDescription}>
+                  {service.description}
+                </p>
                 <small>{service.detail}</small>
               </article>
             ))}
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.workSection}`} id="work" aria-labelledby="work-title">
+        <section
+          className={`${styles.section} ${styles.workSection}`}
+          id="work"
+          aria-labelledby="work-title"
+        >
           <div className={`${styles.workHeading} ${styles.reveal}`} data-reveal>
             <div>
               <h2 id="work-title">Recent projects</h2>
@@ -491,8 +593,14 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
 
           <div className={styles.studyGrid}>
             {studies.map((study) => (
-              <article className={`${styles.study} ${styles.reveal}`} key={study.number} data-reveal>
-                <div className={`${styles.studyImage} ${study.video ? styles.studyImageVideo : ''}`}>
+              <article
+                className={`${styles.study} ${styles.reveal}`}
+                key={study.number}
+                data-reveal
+              >
+                <div
+                  className={`${styles.studyImage} ${study.video ? styles.studyImageVideo : ""}`}
+                >
                   {study.video ? (
                     <video
                       className={styles.studyVideo}
@@ -515,7 +623,7 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
                         objectFit="cover"
                         className={
                           study.images.length > 1
-                            ? `${styles.studyImageFrame} ${study.images.length === 2 ? styles.studyImageFrameTwo : ''} ${imageIndex === 0 ? styles.studyImageFrameFirst : ''}`
+                            ? `${styles.studyImageFrame} ${study.images.length === 2 ? styles.studyImageFrameTwo : ""} ${imageIndex === 0 ? styles.studyImageFrameFirst : ""}`
                             : undefined
                         }
                         style={{
@@ -531,7 +639,9 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
                     <p className={styles.studyEyebrow}>{study.eyebrow}</p>
                     <h3>{study.title}</h3>
                     {study.description && (
-                      <p className={styles.studyDescription}>{study.description}</p>
+                      <p className={styles.studyDescription}>
+                        {study.description}
+                      </p>
                     )}
                   </div>
                   <span>{study.meta}</span>
@@ -541,15 +651,25 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.locationSection}`} id="location" aria-labelledby="location-title">
-          <div className={`${styles.locationHeading} ${styles.reveal}`} data-reveal>
+        <section
+          className={`${styles.section} ${styles.locationSection}`}
+          id="location"
+          aria-labelledby="location-title"
+        >
+          <div
+            className={`${styles.locationHeading} ${styles.reveal}`}
+            data-reveal
+          >
             <p className={styles.eyebrow}>Where to find us</p>
             <h2 id="location-title">Made in London.</h2>
           </div>
-          <div className={`${styles.locationAddress} ${styles.reveal}`} data-reveal>
+          <div
+            className={`${styles.locationAddress} ${styles.reveal}`}
+            data-reveal
+          >
             <address>
-              <strong>Creative Works</strong>
-              <span>First Floor</span>
+              <strong>New Nuevo Ltd</strong>
+              <span>Creative Works, First Floor</span>
               <span>7 Blackhorse Lane</span>
               <span>London, E17 6DS</span>
             </address>
@@ -564,8 +684,15 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
           </div>
         </section>
 
-        <section className={styles.contactSection} id="contact" aria-labelledby="contact-title">
-          <div className={`${styles.contactIntro} ${styles.reveal}`} data-reveal>
+        <section
+          className={styles.contactSection}
+          id="contact"
+          aria-labelledby="contact-title"
+        >
+          <div
+            className={`${styles.contactIntro} ${styles.reveal}`}
+            data-reveal
+          >
             <h2 id="contact-title">Have something in mind?</h2>
           </div>
           <a
@@ -580,7 +707,11 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
 
       <footer className={styles.footer}>
         <div className={`${styles.footerTop} ${styles.reveal}`} data-reveal>
-          <a className={styles.footerBrand} href="#top" aria-label="New Nuevo, back to top">
+          <a
+            className={styles.footerBrand}
+            href="#top"
+            aria-label="New Nuevo, back to top"
+          >
             <Image
               src="/new-nuevo-logo-white.svg"
               alt="New Nuevo"
@@ -589,20 +720,36 @@ const Home: NextPage<ContentfulData> = ({ email }) => {
             />
           </a>
           <div className={styles.socialLinks}>
-            <a href="https://instagram.com/thenewnuevo" target="_blank" rel="noreferrer">Instagram <UpRightArrow /></a>
-            <a href="https://twitter.com/thenewnuevo" target="_blank" rel="noreferrer">X / Twitter <UpRightArrow /></a>
-            <a href={`mailto:${contactEmail}`}>Email us <UpRightArrow /></a>
+            <a
+              href="https://instagram.com/thenewnuevo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram <UpRightArrow />
+            </a>
+            <a
+              href="https://twitter.com/thenewnuevo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              X / Twitter <UpRightArrow />
+            </a>
+            <a href={`mailto:${contactEmail}`}>
+              Email us <UpRightArrow />
+            </a>
           </div>
         </div>
         <div className={styles.footerLegal}>
           <span>© {new Date().getFullYear()} New Nuevo Ltd</span>
           <span>Company no. 11927264</span>
           <span>Registered office: 20–22 Wenlock Road, London, N1 7GU</span>
-          <a href="#top">Back to top <UpArrow /></a>
+          <a href="#top">
+            Back to top <UpArrow />
+          </a>
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
 export default Home
